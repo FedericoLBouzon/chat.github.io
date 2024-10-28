@@ -10,10 +10,11 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Se verá en fila en pantallas grandes */
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay suficiente espacio */
 }
-
 .chat-container {
     width: 350px;
     background-color: #fff;
@@ -23,7 +24,9 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    margin-right: 20px; /* Espacio entre el chat y la barra lateral en pantallas grandes */
 }
+
 
 .chat-header {
     background-color: #4caf50;
@@ -101,4 +104,54 @@ body {
     text-align: center;
     font-size: 14px;
     color: #333;
+}
+
+.sidebar-info {
+    margin-left: 2%;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    width: 350px;
+}
+
+.sidebar-info h2 {
+    margin-bottom: 10px;
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.sidebar-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-info ul li {
+    margin: 8px 0;
+    color: #666;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Configuración para dispositivos móviles */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .sidebar-info {
+        width: 95%;
+        margin-top: 15px;
+        margin-left: 0;
+    }
 }
